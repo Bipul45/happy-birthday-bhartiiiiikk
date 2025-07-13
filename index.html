@@ -1,0 +1,103 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday Bharti</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #ffe6f0;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      overflow-x: hidden;
+    }
+    .center {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+    }
+    .cake {
+      width: 200px;
+      height: 200px;
+      background: pink;
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+      position: relative;
+      margin-bottom: 20px;
+    }
+    .cake:before {
+      content: "Happy Birthday Bharti";
+      position: absolute;
+      top: 40%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-weight: bold;
+      color: #d63384;
+    }
+    .knife {
+      width: 100px;
+      height: 30px;
+      background: silver;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+    #content {
+      display: none;
+      padding: 20px;
+      animation: fadeIn 2s ease-in;
+    }
+    @keyframes fadeIn {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+    audio {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="center" id="start">
+    <div class="cake" id="cake"></div>
+    <div class="knife" id="knife">🍴 Cut Cake</div>
+  </div>
+
+  <div id="content">
+    <h2>💌 Letter for Bharti</h2>
+    <p><!-- ADD LETTER HERE --></p>
+
+    <h2>📸 Memories</h2>
+    <div><!-- ADD PHOTO BLOCKS HERE --></div>
+
+    <h2>💘 Shayari</h2>
+    <ul>
+      <!-- ADD SHAYARI HERE -->
+    </ul>
+
+    <p style="text-align:center; margin-top:40px;">With Love,<br>Your Baandru 💕</p>
+  </div>
+
+  <audio id="bgMusic" autoplay loop>
+    <source src="music.mp3" type="audio/mp3">
+    Your browser does not support the audio element.
+  </audio>
+
+  <script>
+    const knife = document.getElementById('knife');
+    const start = document.getElementById('start');
+    const content = document.getElementById('content');
+    const bgMusic = document.getElementById('bgMusic');
+
+    knife.addEventListener('click', () => {
+      start.style.display = 'none';
+      content.style.display = 'block';
+      bgMusic.play();
+    });
+  </script>
+</body>
+</html>
